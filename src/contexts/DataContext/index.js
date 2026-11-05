@@ -16,6 +16,7 @@ export const api = {
   },
 };
 
+
 export const DataProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
@@ -26,10 +27,11 @@ export const DataProvider = ({ children }) => {
       setError(err);
     }
   }, []);
+
   useEffect(() => {
     if (data) return;
     getData();
-  });
+  }, [data, getData]);
   
   return (
     <DataContext.Provider
