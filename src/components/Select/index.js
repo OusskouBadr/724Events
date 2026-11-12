@@ -54,8 +54,8 @@ const Select = ({
           style={{
             position: "absolute",
             opacity: 0,
-            width: 450,
-            height: 62,
+            width: 0,
+            height: 1,
           }} 
         />
         <button
