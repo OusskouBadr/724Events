@@ -12,6 +12,7 @@ const Select = ({
   titleEmpty,
   label,
   type = 'normal',
+  required
 }) => {
   const [value, setValue] = useState(null);
   const [collapsed, setCollapsed] = useState(true);
@@ -49,7 +50,14 @@ const Select = ({
             </>
           )}
         </ul>
-        <input type='hidden' value={value || ''} name={name} />
+        <input required={required} value={value || ''} name={name} onChange={() => null} 
+          style={{
+            position: "absolute",
+            opacity: 0,
+            width: 450,
+            height: 62,
+          }} 
+        />
         <button
           type='button'
           data-testid='collapse-button-testid'
@@ -88,6 +96,7 @@ Select.propTypes = {
   titleEmpty: PropTypes.bool,
   label: PropTypes.string,
   type: PropTypes.string,
+  required: PropTypes.bool
 };
 
 Select.defaultProps = {
@@ -96,6 +105,7 @@ Select.defaultProps = {
   label: '',
   type: 'normal',
   name: 'select',
+  required: false,
 };
 
 export default Select;

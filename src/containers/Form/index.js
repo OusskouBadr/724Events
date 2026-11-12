@@ -38,7 +38,7 @@ const Form = ({ onSuccess, onError }) => {
             titleEmpty
             required
           />
-          <Field placeholder="" label="Email" required/>
+          <Field placeholder=""label="Email" type={FIELD_TYPES.INPUT_EMAIL} required/>
           <Button type={BUTTON_TYPES.SUBMIT} disabled={sending}>
             {sending ? "En cours" : "Envoyer"}
           </Button>
